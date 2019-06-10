@@ -1,0 +1,20 @@
+[package]
+name = "mpi-pi"
+version = "0.0.0"
+description = "Kinds of methods that calculate pi using mpi."
+repository = "https://github.com/samhaosss/mpi-traffic"
+license = "MIT"
+readme = "README.md"
+authors = [
+    "samhaosss <sunhaoyl@outlook.com>"
+]
+edition = "2018"
+
+[dependencies]
+rand="*"
+structopt="*"
+bigdecimal="*"
+
+[dependencies.mpi]
+git = "https://github.com/bsteinb/rsmpi.git"
+default-features = false
