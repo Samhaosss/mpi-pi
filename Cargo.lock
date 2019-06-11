@@ -266,6 +266,7 @@ dependencies = [
 name = "mpi-pi"
 version = "0.0.0"
 dependencies = [
+ "ansi_term 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bigdecimal 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "mpi 0.6.0 (git+https://github.com/bsteinb/rsmpi.git)",
  "rand 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)",

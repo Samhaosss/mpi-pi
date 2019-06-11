@@ -18,14 +18,10 @@ pub fn receive_big_decimal(world: SystemCommunicator, from: Rank) -> (BigDecimal
     (number_str.parse::<BigDecimal>().unwrap(), status)
 }
 
-pub fn reduce_sum_big_decimal(
-    world: SystemCommunicator,
-    rank: Rank,
-    size: Rank,
-    number: BigDecimal,
-) -> BigDecimal {
+pub fn reduce_big_decimal(world: SystemCommunicator, number: BigDecimal) -> BigDecimal {
+    let rank = world.rank();
     if rank == ROOT {
-        (rank + 1..size)
+        (rank + 1..world.size())
             .map(|rank| receive_big_decimal(world, rank).0)
             .fold(number, |x, y| x + y)
     } else {
@@ -33,3 +29,8 @@ pub fn reduce_sum_big_decimal(
         number
     }
 }
+
+//pub fn series(range: Range<i32>, step: usize, sum:F,item: func(T) -> F) -> F {
+//    range.step_by(step)
+//        .fold(sum,)
+//}
